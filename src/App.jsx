@@ -24,14 +24,13 @@ function App() {
   console.log(data);
 
   const handleChange = (key, value) => {
-    setData((prevData) => {
-      let copyData = { ...prevData };
-      copyData[key] = value;
-      return copyData;
-    });
+    // setData((prevData) => {
+    //   let copyData = { ...prevData };
+    //   copyData[key] = value;
+    //   return copyData;
+    // });
 
-    // setActiveButton(value);
-    // handleToBeActiveButton(value);
+    setData((prevData) => ({ ...prevData, [key]: value }));
   };
 
   // const handleToBeActiveButton = (value) => {

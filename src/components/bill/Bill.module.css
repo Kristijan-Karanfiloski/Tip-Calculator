@@ -61,6 +61,7 @@ input[type="number"]{
     padding-right: .5rem;
     color: var(--color-neutral-very-dark-cyan);
     font-weight: bold;
+    border-radius: 7px;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -72,7 +73,6 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number]:focus{
     outline:none;
     border:2px solid var(--color-primary-strong-cyan) ;
-
 }
 
 .activeBtn {
