@@ -1,0 +1,27 @@
+.tipCalculator{
+    --border-radius:2rem;
+    padding: 2rem;
+    --padding:2.5rem;
+    max-width:55rem;
+    display: grid;
+    background: var(--color-neutral-white);
+    margin-bottom: 2rem;
+}
+
+h1{
+    color:var(  --color-neutral-very-dark-cyan);
+    text-align: center;
+    margin: 3rem 0;
+    font-weight:bold;
+    letter-spacing:5px;
+}
+
+@media (min-width:600px){
+    .tipCalculator{
+        grid-template-columns:1fr 1fr;
+        margin-inline: 1rem;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+
+    }
+}

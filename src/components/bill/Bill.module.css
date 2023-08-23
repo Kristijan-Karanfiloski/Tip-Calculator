@@ -1,0 +1,97 @@
+.billContainer{
+    text-align: start;
+    padding: var(--padding);
+    /*border:1px solid green;*/
+}
+
+.selectTip{
+    text-align: start;
+}
+
+.buttonGrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 items in a row */
+    grid-template-rows: repeat(2, auto); /* 3 rows, adjusting to content height */
+    gap: 1rem; /* Gap between grid items */
+}
+
+.billInputWrapper{
+    position: relative;
+}
+.billInputWrapper span{
+    position: absolute;
+    top: 60%;
+    left:10px
+}
+
+.peopleInputWrapper{
+    position: relative;
+}
+.peopleInputWrapper span{
+    position: absolute;
+    top: 65%;
+    left:10px
+}
+
+.gridFlow{
+    display: grid;
+    align-content:start;
+    gap:1.5rem;
+    column-gap: 2rem;
+}
+
+label{
+    font-size:1rem;
+    color: var(  --color-neutral-dark-grayish-cyan);
+    font-weight: bold;
+}
+
+h2{
+    font-size:1rem;
+    color: var(  --color-neutral-dark-grayish-cyan);
+    font-weight: bold
+}
+
+input[type="number"]{
+    width:100%;
+    text-align:right;
+    border: 0;
+    /*background: var(   --color-neutral-very-light-grayish-cyan);*/
+    background: var(--color-neutral-very-light-grayish-cyan);
+    padding-right: .5rem;
+    color: var(--color-neutral-very-dark-cyan);
+    font-weight: bold;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+
+input[type=number]:focus{
+    outline:none;
+    border:2px solid var(--color-primary-strong-cyan) ;
+
+}
+
+.activeBtn {
+    background: var(--color-primary-strong-cyan);
+    color: var(--color-neutral-very-dark-cyan)
+}
+
+
+button:last-child {
+    background: var( --color-neutral-very-light-grayish-cyan);
+    color: var(  --color-neutral-dark-grayish-cyan);
+    font-weight: bold;
+}
+
+
+
+@media (max-width: 599px) {  /* This is just an example breakpoint, adjust as needed */
+    .buttonGrid {
+        grid-template-columns: repeat(2, 1fr); /* 3 items in a row */
+        grid-template-rows: repeat(3, auto); /* 2 rows, adjusting to content height */
+    }
+}

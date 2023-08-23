@@ -1,0 +1,19 @@
+.button{
+    width: 100%;  /* Ensures buttons take full width of the grid column */
+    min-width: 100px;  /* Example value, adjust as needed */
+    text-align: center;
+    padding: .5rem .5rem;
+    border: 0;
+    background: var( --color-neutral-very-dark-cyan);
+    color: var(--color-neutral-white);
+    font-weight: bold;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+
+.activeButton {
+    background: var(  --color-primary-strong-cyan);
+    color: var(  --color-neutral-very-dark-cyan)
+}
+
