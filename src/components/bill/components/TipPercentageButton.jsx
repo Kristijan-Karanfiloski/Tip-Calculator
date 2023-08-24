@@ -1,14 +1,10 @@
 import styles from "./TipPercentageButton.module.css";
 
 const TipPercentageButton = ({ label, handleChange, active, data }) => {
-  // console.log("tipPercentageButton", active);
-  // console.log(label);
-  // console.log(active);
-
   const handleButtonClick = (value) => {
     handleChange("tip", value); // Set the tip amount in parent's state
   };
-  // console.log(data);
+
   if (label === "Custom") {
     return (
       <>
@@ -17,12 +13,6 @@ const TipPercentageButton = ({ label, handleChange, active, data }) => {
             value={data.isCustom ? data.tip : ""}
             type="number"
             placeholder={"Custom"}
-            // onFocus={() => {
-            //   handleButtonClick(label);
-            // }}
-            // onBlur={() => {
-            //   handleButtonClick(null);
-            // }}
             onFocus={() => {
               if (!data.isCustom) {
                 handleChange("isCustom", true);
@@ -48,10 +38,6 @@ const TipPercentageButton = ({ label, handleChange, active, data }) => {
         }
         handleButtonClick(label);
       }}
-      // onClick={() => handleActive(label)}
-      // onFocus={() => {
-      //   handleButtonClick(label);
-      // }}
     >
       {label}%
     </button>

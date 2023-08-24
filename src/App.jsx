@@ -33,12 +33,6 @@ function App() {
     setData((prevData) => ({ ...prevData, [key]: value }));
   };
 
-  // const handleToBeActiveButton = (value) => {
-  //   setActiveButton(value);
-  // };
-
-  // console.log(data);
-
   return (
     <>
       <h1>
@@ -48,11 +42,7 @@ function App() {
       </h1>
       <main>
         <div className="tipCalculator">
-          <Bill
-            data={data}
-            handleChange={handleChange}
-            // activeButton={activeButton}
-          />
+          <Bill data={data} handleChange={handleChange} />
           <Calculator data={data} handleReset={handleReset} />
         </div>
       </main>
