@@ -1,24 +1,20 @@
 import styles from "./Calculator.module.css";
 
 const Calculator = ({ data, handleReset }) => {
-  // const calculateTip = (tip, bill) => {
-  //   if (!tip || isNaN(tip) || tip === 0) return 0;
-  //   return (tip / 100) * bill;
-  // };
-  // const totalAmount = Number(data.bill) + tipAmount;
+  // let billable = 0;
+  //
+  // if (Number(data.bill) <= 0) {
+  //   console.log("Input field must be a number greater than zero");
+  //   // return Number(data.bill) === 0;
+  //   billable = 0;
+  // } else {
+  //   // return data.bill === 0;
+  // }
+
   const tipAmountPerPerson =
     (Number(data.bill) / Number(data.people)) * (Number(data.tip) / 100);
   const totalPerPerson =
     tipAmountPerPerson + Number(data.bill) / Number(data.people);
-
-  // console.log("Tip Amount :", tipAmount);
-
-  // const tipAmountPerPerson = (Number(data.bill)/data.people)*()
-
-  // const tipPerPerson =
-  //   Number(data.people) > 0 && !isNaN(Number(data.people))
-  //     ? tipOnTotalAmount / Number(data.people)
-  //     : 0;
 
   return (
     <div className={`${styles.tipWrapper} ${styles.gridFlow}`}>
@@ -29,7 +25,6 @@ const Calculator = ({ data, handleReset }) => {
         </div>
 
         <span>
-          {/*${" "}*/}
           {`$${
             isFinite(tipAmountPerPerson)
               ? tipAmountPerPerson.toFixed(2)
