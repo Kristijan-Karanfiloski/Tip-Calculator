@@ -30,7 +30,15 @@ function App() {
     //   return copyData;
     // });
 
-    setData((prevData) => ({ ...prevData, [key]: value }));
+    if (key === "isCustom") {
+      setData((prevData) => ({ ...prevData, [key]: value }));
+    } else if (/^(\d+(\.\d+)?)?$/.test(value)) {
+      setData((prevData) => ({ ...prevData, [key]: value }));
+    }
+
+    // if (/^(\d+(\.\d+)?)$/.test(value)) {
+    //   setData((prevData) => ({ ...prevData, [key]: value }));
+    // }
   };
 
   return (

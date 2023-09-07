@@ -12,12 +12,10 @@ const TipPercentageButton = ({ label, handleChange, active, data }) => {
           <input
             value={data.isCustom ? data.tip : ""}
             type="number"
-            placeholder={"Custom"}
+            placeholder="Custom"
             onFocus={() => {
-              if (!data.isCustom) {
-                handleChange("isCustom", true);
-                return handleChange("tip", "");
-              }
+              handleChange("isCustom", true);
+              handleChange("tip", "");
             }}
             onChange={(e) => {
               handleChange("tip", e.target.value);

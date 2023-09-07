@@ -14,7 +14,7 @@ const Bill = ({ data, handleChange }) => {
           id="bill"
           placeholder="0"
           // value={data.bill}
-          onChange={(e) => handleChange("bill", e.target.value)}
+          onChange={(e) => handleChange("bill", +e.target.value)}
         />
         <span>
           <DolarIcon />
@@ -42,7 +42,7 @@ const Bill = ({ data, handleChange }) => {
           type="number"
           id="people"
           placeholder="0"
-          onChange={(e) => handleChange("people", e.target.value)}
+          onChange={(e) => handleChange("people", +e.target.value)}
         />
         <span>
           <PeopleIcon />
