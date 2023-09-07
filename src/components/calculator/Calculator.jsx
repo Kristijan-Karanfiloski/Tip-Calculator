@@ -15,6 +15,16 @@ const Calculator = ({ data, handleReset }) => {
     (Number(data.bill) / Number(data.people)) * (Number(data.tip) / 100);
   const totalPerPerson =
     tipAmountPerPerson + Number(data.bill) / Number(data.people);
+  // const totalBillWithNoTip = Number(data.bill) / Number(data.people);
+
+  // if (data.tip === 0) {
+  //   console.log("There is no tip");
+  // }
+
+  let displayAmountWithNoTip =
+    data.tip === 0 && data.people > 0
+      ? `$${totalPerPerson.toFixed(2)}`
+      : `$${isFinite(totalPerPerson) ? totalPerPerson.toFixed(2) : "0.00"}`;
 
   return (
     <div className={`${styles.tipWrapper} ${styles.gridFlow}`}>
@@ -37,9 +47,10 @@ const Calculator = ({ data, handleReset }) => {
           <p className={styles.topParagraph}>Total</p>
           <p className={styles.bottomParagraph}>/ person</p>
         </div>
-        <span>{`$${
-          isFinite(totalPerPerson) ? totalPerPerson.toFixed(2) : "0.00"
-        }`}</span>
+        {/*<span>{`$${*/}
+        {/*  isFinite(totalPerPerson) ? totalPerPerson.toFixed(2) : "0.00"*/}
+        {/*}`}</span>*/}
+        <span>{displayAmountWithNoTip}</span>
       </div>
       <button onClick={handleReset}>RESET</button>
     </div>
