@@ -2,8 +2,28 @@ import styles from "./Bill.module.css";
 import { buttonLabels } from "./components/helper.js";
 import TipPercentageButton from "./components/TipPercentageButton.jsx";
 import { DolarIcon, PeopleIcon } from "./components/icons.jsx";
+import { useState } from "react";
 
 const Bill = ({ data, handleChange }) => {
+  const [valid, setIsValid] = useState(false);
+
+  const handleBillInput = (event) => {
+    if (handleChange("bill", +event.target.value)) {
+      setIsValid(true);
+    }
+  };
+
+  const handleIsValidInputBlur = (event) => {
+    if (event.target.value === "") {
+      setIsValid(true);
+    }
+  };
+
+  const handlePeopleInputChange = (event) => {
+    handleChange("people", +event.target.value);
+    setIsValid(false);
+  };
+
   return (
     <div className={`${styles.billContainer} ${styles.gridFlow}`}>
       <div className={styles.billInputWrapper}>
@@ -14,11 +34,13 @@ const Bill = ({ data, handleChange }) => {
           id="bill"
           placeholder="0"
           // value={data.bill}
-          onChange={(e) => handleChange("bill", +e.target.value)}
+          // onChange={(e) => handleChange("bill", +e.target.value)}
+          onChange={handleBillInput}
         />
         <span>
           <DolarIcon />
         </span>
+        {/*{!valid && <p>Cant be empty</p>}*/}
       </div>
       <div className={`${styles.selectTip} ${styles.gridFlow}`}>
         <h2>Select Tip %</h2>
@@ -42,11 +64,13 @@ const Bill = ({ data, handleChange }) => {
           type="number"
           id="people"
           placeholder="0"
-          onChange={(e) => handleChange("people", +e.target.value)}
+          onChange={handlePeopleInputChange}
+          onBlur={handleIsValidInputBlur}
         />
         <span>
           <PeopleIcon />
         </span>
+        {valid && <p className={styles.errorInputText}>Can't be zero</p>}
       </div>
     </div>
   );

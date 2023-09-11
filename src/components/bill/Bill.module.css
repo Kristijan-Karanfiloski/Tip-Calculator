@@ -33,6 +33,14 @@
     left:10px
 }
 
+.errorInputText{
+    position: absolute;
+    color: red;
+    top: 17%;
+    left:70%;
+
+}
+
 .gridFlow{
     display: grid;
     align-content:start;
