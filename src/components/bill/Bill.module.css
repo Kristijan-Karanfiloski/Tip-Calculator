@@ -63,7 +63,8 @@ h2{
 input[type="number"]{
     width:100%;
     text-align:right;
-    border: 0;
+    border:  2px solid transparent;
+    /*border: 0;*/
     /*background: var(   --color-neutral-very-light-grayish-cyan);*/
     background: var(--color-neutral-very-light-grayish-cyan);
     padding-right: .5rem;
